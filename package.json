@@ -6,7 +6,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "npm run build && xcopy dist\\* . /E /Y && git add . && git commit -m \"deploy\" && git push"
   },
   "keywords": [],
   "author": "",

@@ -49,7 +49,7 @@ export const SCRIPTS: Record<string, ScriptItem> = {
     description: 'Tampermonkey를 활용한 visual_dialogue.js 적용 탁에서의 표정 명령어 간략화(PL 각자 적용)',
     author: 'O',
     version: '1.0',
-    updatedAt: '2024. 05. 21',
+    updatedAt: '2026. 01. 13.',
     content: {
       introduction: `정식명칭은 Roll20 Auto-Exclaim for Emotion 입니다.
 
@@ -66,8 +66,9 @@ GM이 새 api 코드를 적용한다든가 하는 별개의 활동을 하지 않
 
 PL들이 다 각자 따로 깔아야 합니다(GM이 visual_dialogue.js를 쓰고 있기만 하다면 PL이 혼자 알아서 적용해 써도 된다는 뜻이기도 합니다).`,
       usage: {
+        description: `@표정, 또는 대사 @표정을 전송하면 자동으로 표정이 바뀝니다.`,
         images: [
-           "public/화면 녹화 중 2026-01-09 185323.gif" 
+           "/images/expression.gif" 
         ]
       },
       guideSteps: [
@@ -144,7 +145,7 @@ PL들이 다 각자 따로 깔아야 합니다(GM이 visual_dialogue.js를 쓰�
     description: 'Tampermonkey를 활용한 토큰 클릭 시 자동 as 전환 스크립트(GM용)',
     author: 'O',
     version: '1.0',
-    updatedAt: '2024. 05. 21',
+    updatedAt: '2026. 01. 13.',
     content: {
       introduction: `정식 명칭은 Roll20 Auto As Switcher입니다.
 
@@ -158,7 +159,7 @@ PL들이 다 각자 따로 깔아야 합니다(GM이 visual_dialogue.js를 쓰�
 
 이렇게 생성한 토큰은 이미 캐릭터와 연동되어 있기 때문에, 클릭 시 해당 캐릭터로 as를 바꿀 수 있습니다.`,
         images: [
-          "public/[예똣룻재] Rewind Scenario _ Roll20 - Chrome 2025-12-24 01-00-13.gif"
+          "/images/asswitcher.gif"
         ]
       },
       guideSteps: [
@@ -285,7 +286,7 @@ PL들이 다 각자 따로 깔아야 합니다(GM이 visual_dialogue.js를 쓰�
     description: 'Tampermonkey를 이용한 롤20 CoC 7판 적용 채팅 팔레트(GM/PL 공용)',
     author: 'O',
     version: '1.1',
-    updatedAt: '2024. 05. 21',
+    updatedAt: '2026. 01. 13.',
     content: {
       introduction: `정식 명칭은 Roll20 CoC 7th Chat Palette 입니다.
 
@@ -311,7 +312,7 @@ CoC 7판이라면 작동합니다. 사용할 때 문장의 서두에서만 자�
 
 기능치/특성치 이름 뒤에 띄어쓰기 없이 바로 1을 붙이면 보너스/페널티 다이스를 굴릴 수 있습니다. 자료조사1, 근력1, 민첩1, 이렇게 입력해서 엔터를 눌러 보세요.`,
         images: [
-           "public/화면 녹화 중 2026-01-12 131418.gif" 
+           "/images/chatpalette.gif" 
         ]
       },
       guideSteps: [
@@ -776,7 +777,7 @@ CoC 7판이라면 작동합니다. 사용할 때 문장의 서두에서만 자�
     description: 'Tampermonkey를 이용한 롤20 hidden 채팅이 보이지 않게 하는 스크립트(GM/PL공용)',
     author: 'R',
     version: '1.4',
-    updatedAt: '2024. 05. 21',
+    updatedAt: '2026. 01. 13.',
     content: {
       introduction: `제가 만든 스크립트가 아닙니다! 루스 님의 스크립트를 대리 배포합니다.
 
@@ -790,7 +791,7 @@ CoC 7판이라면 작동합니다. 사용할 때 문장의 서두에서만 자�
       usage: {
         description: 'Hidden을 누르면 자신의 화면에서 채팅 내역이 사라집니다.',
         images: [
-           "public/KakaoTalk_20260112_133509298.gif"
+           "/images/deleter.gif"
         ]
       },
       guideSteps: [
@@ -865,7 +866,7 @@ CoC 7판이라면 작동합니다. 사용할 때 문장의 서두에서만 자�
     description: 'ROLL20/롤20 대사 수정 API+스크립트 배포합니다 ^_^',
     author: 'R',
     version: '4.0',
-    updatedAt: '2024. 05. 21',
+    updatedAt: '2026. 01. 13.',
     content: {
       introduction: `+방 제작자가 아니라면 무료 플랜 사용자여도 괜찮습니다.
 
@@ -881,7 +882,7 @@ CoC 7판이라면 작동합니다. 사용할 때 문장의 서두에서만 자�
 이용 시 주의사항
 1. 로컬 렌더링 방식의 스크립트는 서버의 원본 데이터를 물리적으로 수정하는 것이 아니라, 사용자의 브라우저에 표시되는 화면을 실시간으로 가공하는 방식입니다. 따라서 본 스크립트를 설치하지 않은 플레이어의 화면에는 수정 전의 원본 메시지와 명령어 태그가 그대로 노출됩니다. 가급적 모든 참여자가 함께 설치하는 것을 권장합니다.
 2. 혼선을 방지하기 위해, 각 저널이 보낸 가장 마지막 메시지 1개에 대해서만 수정을 허용합니다.`,
-        images: ["public/KakaoTalk_20260112_200029458.gif"]
+        images: ["/images/editor.gif"]
       },
       guideSteps: [
         {
