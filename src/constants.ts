@@ -44,7 +44,7 @@ export const GUIDE_CONTENT = {
 export const SCRIPTS: Record<string, ScriptItem> = {
   'visual-novel-helper': {
     id: 'visual-novel-helper',
-    title: '비주얼노벨 API 대응 커맨드 간략화',
+    title: '비주얼노벨 API 대응 커맨드 간략화 스크립트',
     subtitle: '양천일염님의 visual_dialogue.js 대응 스크립트, 대사 @표정을 써보자.',
     description: 'Tampermonkey를 활용한 visual_dialogue.js 적용 탁에서의 표정 명령어 간략화(PL 각자 적용)',
     author: 'O',
@@ -70,30 +70,8 @@ PL들이 다 각자 따로 깔아야 합니다(GM이 visual_dialogue.js를 쓰�
         images: [
            "/images/expression.gif" 
         ]
-      },
-      guideSteps: [
-        {
-          title: '1. 확장 프로그램 설치',
-          text: '아래 링크로 들어가 Chrome에 추가 클릭 > 확장 프로그램 추가',
-          link: 'https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=ko&pli=1'
-        },
-        {
-          title: '2. 확장 프로그램 관리 접속',
-          text: '크롬 화면 우측 상단의 확장 프로그램 버튼을 누릅니다. 여기서 Tampermonkey 오른쪽의 점 세 개 클릭 > 확장 프로그램 관리'
-        },
-        {
-          title: '3. 개발자 모드 켜기',
-          text: '오른쪽 상단의 개발자 모드 토글 ON, 아래로 내려서 사용자 스크립트 허용 토글 ON.'
-        },
-        {
-          title: '4. 새 스크립트 만들기',
-          text: '크롬창 우측 상단 확장 프로그램 버튼 눌러서 Tampermonkey 클릭 > 새 스크립트 만들기'
-        },
-        {
-          title: '5. 코드 적용',
-          text: '원래 있던 코드 모두 지우고 아래 코드 그대로 복사(Ctrl+C)하여 붙여넣기(Ctrl+V) 후 저장(Ctrl+S)합니다.'
-        }
-      ]
+      }
+
     },
     code: `// ==UserScript==
 // @name         Roll20 Auto-Exclaim for Emotion
@@ -140,7 +118,7 @@ PL들이 다 각자 따로 깔아야 합니다(GM이 visual_dialogue.js를 쓰�
   },
   'auto-as-switcher': {
     id: 'auto-as-switcher',
-    title: '토큰 클릭 시 as 전환 스크립트 배포',
+    title: '토큰 클릭 시 as 전환 스크립트',
     subtitle: '무료 계정 가능, 저널과 연동된 토큰을 클릭하면 as가 바뀝니다.',
     description: 'Tampermonkey를 활용한 토큰 클릭 시 자동 as 전환 스크립트(GM용)',
     author: 'O',
@@ -161,30 +139,7 @@ PL들이 다 각자 따로 깔아야 합니다(GM이 visual_dialogue.js를 쓰�
         images: [
           "/images/asswitcher.gif"
         ]
-      },
-      guideSteps: [
-        {
-          title: '1. 확장 프로그램 설치',
-          text: '아래 링크로 들어가 Chrome에 추가 클릭 > 확장 프로그램 추가',
-          link: 'https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=ko&pli=1'
-        },
-        {
-          title: '2. 확장 프로그램 관리 접속',
-          text: '크롬 화면 우측 상단의 확장 프로그램 버튼을 누릅니다. 여기서 Tampermonkey 오른쪽의 점 세 개 클릭 > 확장 프로그램 관리'
-        },
-        {
-          title: '3. 개발자 모드 켜기',
-          text: '오른쪽 상단의 개발자 모드 토글 ON, 아래로 내려서 사용자 스크립트 허용 토글 ON.'
-        },
-        {
-          title: '4. 새 스크립트 만들기',
-          text: '크롬창 우측 상단 확장 프로그램 버튼 눌러서 Tampermonkey 클릭 > 새 스크립트 만들기'
-        },
-        {
-          title: '5. 코드 적용',
-          text: '원래 있던 코드 모두 지우고 아래 코드 그대로 복사(Ctrl+C)하여 붙여넣기(Ctrl+V) 후 저장(Ctrl+S)합니다.'
-        }
-      ]
+      }
     },
     code: `// ==UserScript==
 // @name         Roll20 Auto As Switcher
@@ -281,7 +236,7 @@ PL들이 다 각자 따로 깔아야 합니다(GM이 visual_dialogue.js를 쓰�
   },
   'coc-chat-palette': {
     id: 'coc-chat-palette',
-    title: 'CoC 7판 전용 채팅 팔레트 스크립트 베타 버전 배포',
+    title: 'CoC 7판 전용 채팅 팔레트 스크립트 베타 버전',
     subtitle: '코코포리아의 채팅 팔레트 판정 기능, 판정 이외의 기능은 없습니다.',
     description: 'Tampermonkey를 이용한 롤20 CoC 7판 적용 채팅 팔레트(GM/PL 공용)',
     author: 'O',
@@ -314,30 +269,7 @@ CoC 7판이라면 작동합니다. 사용할 때 문장의 서두에서만 자�
         images: [
            "/images/chatpalette.gif" 
         ]
-      },
-      guideSteps: [
-        {
-          title: '1. 확장 프로그램 설치',
-          text: '아래 링크로 들어가 Chrome에 추가 클릭 > 확장 프로그램 추가',
-          link: 'https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=ko&pli=1'
-        },
-        {
-          title: '2. 확장 프로그램 관리 접속',
-          text: '크롬 화면 우측 상단의 확장 프로그램 버튼을 누릅니다. 여기서 Tampermonkey 오른쪽의 점 세 개 클릭 > 확장 프로그램 관리'
-        },
-        {
-          title: '3. 개발자 모드 켜기',
-          text: '오른쪽 상단의 개발자 모드 토글 ON, 아래로 내려서 사용자 스크립트 허용 토글 ON.'
-        },
-        {
-          title: '4. 새 스크립트 만들기',
-          text: '크롬창 우측 상단 확장 프로그램 버튼 눌러서 Tampermonkey 클릭 > 새 스크립트 만들기'
-        },
-        {
-          title: '5. 코드 적용',
-          text: '원래 있던 코드 모두 지우고 아래 코드 그대로 복사(Ctrl+C)하여 붙여넣기(Ctrl+V) 후 저장(Ctrl+S)합니다.'
-        }
-      ]
+      }
     },
     code: `// ==UserScript==
 // @name         Roll20 CoC 7th Chat Palette
@@ -776,12 +708,10 @@ CoC 7판이라면 작동합니다. 사용할 때 문장의 서두에서만 자�
     subtitle: 'This message has been hidden 메시지가 롤방에서 보이지 않게 합니다.',
     description: 'Tampermonkey를 이용한 롤20 hidden 채팅이 보이지 않게 하는 스크립트(GM/PL공용)',
     author: 'R',
-    version: '1.4',
+    version: '1.0',
     updatedAt: '2026. 01. 13.',
     content: {
-      introduction: `제가 만든 스크립트가 아닙니다! 루스 님의 스크립트를 대리 배포합니다.
-
-롤20 실시간 세션 방과 외부 채팅 로그 페이지에서 This message has been hidden이라는 삭제 알림 문구가 보이지 않게 해주는 기능을 제공하는 스크립트입니다. 
+      introduction: `롤20 실시간 세션 방과 외부 채팅 로그 페이지에서 This message has been hidden이라는 삭제 알림 문구가 보이지 않게 해주는 기능을 제공하는 스크립트입니다. 
 
 다만 템퍼몽키 특성상 설치한 본인의 브라우저에서만 적용되므로, 모든 세션 멤버가 삭제 흔적 없는 깔끔한 채팅창을 보려면 플레이어 전원이 각자 스크립트를 설치해야 합니다. 또한, 스크립트를 통해 보이지 않게 처리된 삭제 메시지는 시스템상 다시 복구할 수 없습니다.
 
@@ -793,30 +723,7 @@ CoC 7판이라면 작동합니다. 사용할 때 문장의 서두에서만 자�
         images: [
            "/images/deleter.gif"
         ]
-      },
-      guideSteps: [
-        {
-          title: '1. 확장 프로그램 설치',
-          text: '아래 링크로 들어가 Chrome에 추가 클릭 > 확장 프로그램 추가',
-          link: 'https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=ko&pli=1'
-        },
-        {
-          title: '2. 확장 프로그램 관리 접속',
-          text: '크롬 화면 우측 상단의 확장 프로그램 버튼을 누릅니다. 여기서 Tampermonkey 오른쪽의 점 세 개 클릭 > 확장 프로그램 관리'
-        },
-        {
-          title: '3. 개발자 모드 켜기',
-          text: '오른쪽 상단의 개발자 모드 토글 ON, 아래로 내려서 사용자 스크립트 허용 토글 ON.'
-        },
-        {
-          title: '4. 새 스크립트 만들기',
-          text: '크롬창 우측 상단 확장 프로그램 버튼 눌러서 Tampermonkey 클릭 > 새 스크립트 만들기'
-        },
-        {
-          title: '5. 코드 적용',
-          text: '원래 있던 코드 모두 지우고 아래 코드 그대로 복사(Ctrl+C)하여 붙여넣기(Ctrl+V) 후 저장(Ctrl+S)합니다.'
-        }
-      ]
+      }
     },
     code: `// ==UserScript==
 // @name         Roll20 Hide Deleted Only
@@ -865,7 +772,7 @@ CoC 7판이라면 작동합니다. 사용할 때 문장의 서두에서만 자�
     subtitle: 'Roll20 프로 계정이 만든 방만 가능하며, 탁 전원 스크립트를 적용해야 합니다.',
     description: 'ROLL20/롤20 대사 수정 API+스크립트 배포합니다 ^_^',
     author: 'R',
-    version: '4.0',
+    version: '1.0',
     updatedAt: '2026. 01. 13.',
     content: {
       introduction: `+방 제작자가 아니라면 무료 플랜 사용자여도 괜찮습니다.
@@ -883,17 +790,7 @@ CoC 7판이라면 작동합니다. 사용할 때 문장의 서두에서만 자�
 1. 로컬 렌더링 방식의 스크립트는 서버의 원본 데이터를 물리적으로 수정하는 것이 아니라, 사용자의 브라우저에 표시되는 화면을 실시간으로 가공하는 방식입니다. 따라서 본 스크립트를 설치하지 않은 플레이어의 화면에는 수정 전의 원본 메시지와 명령어 태그가 그대로 노출됩니다. 가급적 모든 참여자가 함께 설치하는 것을 권장합니다.
 2. 혼선을 방지하기 위해, 각 저널이 보낸 가장 마지막 메시지 1개에 대해서만 수정을 허용합니다.`,
         images: ["/images/editor.gif"]
-      },
-      guideSteps: [
-        {
-          title: '1. API 스크립트 설치 (GM/방장 전용)',
-          text: 'Roll20 캠페인 설정의 API Scripts 페이지로 이동합니다. 새 스크립트를 생성하고, 아래의 [Roll20 API] 코드를 붙여넣은 뒤 저장합니다. (Pro 구독 필요)'
-        },
-        {
-          title: '2. 유저 스크립트 설치 (참가자 전원)',
-          text: '브라우저에 Tampermonkey 확장 프로그램을 설치합니다. 새 스크립트를 생성하여 아래의 [Tampermonkey UserScript] 코드를 저장합니다.'
-        }
-      ]
+      }
     },
     code: '', // Not used directly, using additionalCodeBlocks below
     additionalCodeBlocks: [
