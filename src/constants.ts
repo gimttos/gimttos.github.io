@@ -795,7 +795,7 @@ CoC 7판이라면 작동합니다. 사용할 때 문장의 서두에서만 자�
     code: '', // Not used directly, using additionalCodeBlocks below
     additionalCodeBlocks: [
       {
-        title: '1. Roll20 API Script (방장용)',
+        title: '1. Roll20 API Script (GM용)',
         code: `on("chat:message", function(msg) {
     if (msg.type === "api" && msg.content.indexOf("!X ") === 0) {
         let newContent = msg.content.substring(3).trim(); // !X + space
@@ -809,7 +809,7 @@ CoC 7판이라면 작동합니다. 사용할 때 문장의 서두에서만 자�
 });`
       },
       {
-        title: '2. Tampermonkey UserScript (참가자 전원용)',
+        title: '2. Tampermonkey UserScript (GM+PL용)',
         code: `// ==UserScript==
 // @name         RUSRoll20 EDIT
 // @namespace    http://tampermonkey.net/
