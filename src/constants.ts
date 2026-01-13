@@ -4,54 +4,55 @@ export const GUIDE_ID = 'installation-guide';
 
 // Navigation structure
 export const NAV_ITEMS: NavigationItem[] = [
-  { id: GUIDE_ID, label: '시작하기 (설치 방법)', type: 'guide' },
-  { id: 'visual-novel-helper', label: '비주얼노벨 커맨드 간략화', type: 'script' },
-  { id: 'auto-as-switcher', label: '토큰 클릭 시 as 전환', type: 'script' },
-  { id: 'coc-chat-palette', label: 'CoC 7판 채팅 팔레트', type: 'script' },
-  { id: 'hide-deleted-messages', label: 'Hidden 채팅 삭제', type: 'script' },
-  { id: 'message-edit-script', label: '대사 수정 API+스크립트', type: 'script' },
+    { id: GUIDE_ID, label: '시작하기 (설치 방법)', type: 'guide' },
+    { id: 'visual-novel-helper', label: '비주얼노벨 커맨드 간략화', type: 'script' },
+    { id: 'auto-as-switcher', label: '토큰 클릭 시 as 전환', type: 'script' },
+    { id: 'coc-chat-palette', label: 'CoC 7판 채팅 팔레트', type: 'script' },
+    { id: 'hide-deleted-messages', label: 'Hidden 채팅 삭제', type: 'script' },
+    { id: 'message-edit-script', label: '대사 수정 API+스크립트', type: 'script' },
+    { id: 'outside-avatar', label: '외부 아바타 주입기', type: 'script' },
 ];
 
 // Content for the Global Guide
 export const GUIDE_CONTENT = {
-  title: 'Tampermonkey 스크립트 설치 방법',
-  description: '배포 유저 스크립트를 Tampermonkey에 적용하는 방법입니다.',
-  steps: [
-    {
-      title: '1. 확장 프로그램 설치',
-      text: '사용하는 브라우저(Chrome, Edge, Firefox 등)에 맞는 Tampermonkey 확장 프로그램을 웹 스토어에서 검색해 설치합니다.'
-    },
-    {
-      title: '2. 새 스크립트 생성',
-      text: '브라우저 우측 상단의 확장 프로그램 아이콘에서 Tampermonkey를 클릭하고 새 스크립트 만들기를 선택합니다.'
-    },
-    {
-      title: '3. 코드 복사 및 붙여넣기',
-      text: '에디터에 적혀있는 내용을 모두 지운 뒤, 원하는 스크립트의 코드를 복사하여 붙여넣습니다.'
-    },
-    {
-      title: '4. 저장',
-      text: 'Ctrl + S 입력 또는 에디터 상단의 "파일 > 저장"을 눌러 저장합니다.'
-    },
-    {
-      title: '5. 롤20 접속 및 새로고침',
-      text: 'Roll20 페이지에 접속해 새로고침하면 스크립트가 동작합니다.'
-    }
-  ]
+    title: 'Tampermonkey 스크립트 설치 방법',
+    description: '배포 유저 스크립트를 Tampermonkey에 적용하는 방법입니다.',
+    steps: [
+        {
+            title: '1. 확장 프로그램 설치',
+            text: '사용하는 브라우저(Chrome, Edge, Firefox 등)에 맞는 Tampermonkey 확장 프로그램을 웹 스토어에서 검색해 설치합니다.'
+        },
+        {
+            title: '2. 새 스크립트 생성',
+            text: '브라우저 우측 상단의 확장 프로그램 아이콘에서 Tampermonkey를 클릭하고 새 스크립트 만들기를 선택합니다.'
+        },
+        {
+            title: '3. 코드 복사 및 붙여넣기',
+            text: '에디터에 적혀있는 내용을 모두 지운 뒤, 원하는 스크립트의 코드를 복사하여 붙여넣습니다.'
+        },
+        {
+            title: '4. 저장',
+            text: 'Ctrl + S 입력 또는 에디터 상단의 "파일 > 저장"을 눌러 저장합니다.'
+        },
+        {
+            title: '5. 롤20 접속 및 새로고침',
+            text: 'Roll20 페이지에 접속해 새로고침하면 스크립트가 동작합니다.'
+        }
+    ]
 };
 
 // Database of Scripts
 export const SCRIPTS: Record<string, ScriptItem> = {
-  'visual-novel-helper': {
-    id: 'visual-novel-helper',
-    title: '비주얼노벨 API 대응 커맨드 간략화 스크립트',
-    subtitle: '양천일염님의 visual_dialogue.js 대응 스크립트, 대사 @표정을 써보자.',
-    description: 'Tampermonkey를 활용한 visual_dialogue.js 적용 탁에서의 표정 명령어 간략화(PL 각자 적용)',
-    author: 'O',
-    version: '1.0',
-    updatedAt: '2026. 01. 13.',
-    content: {
-      introduction: `정식명칭은 Roll20 Auto-Exclaim for Emotion 입니다.
+    'visual-novel-helper': {
+        id: 'visual-novel-helper',
+        title: '비주얼노벨 API 대응 커맨드 간략화 스크립트',
+        subtitle: '양천일염님의 visual_dialogue.js 대응 스크립트, 대사 @표정을 써보자.',
+        description: 'Tampermonkey를 활용한 visual_dialogue.js 적용 탁에서의 표정 명령어 간략화(PL 각자 적용)',
+        author: 'O',
+        version: '1.0',
+        updatedAt: '2026. 01. 13.',
+        content: {
+            introduction: `정식명칭은 Roll20 Auto-Exclaim for Emotion 입니다.
 
 양천일염 님의 visual_dialoge.js api를 적용하는 탁에서 !@표정을 쓸 때 !@를 하나하나 쳐야 하는 번거로움, 한 줄에 대사 @표정 을 보내지 못하고 따로 보내야 하는 번거로움을 해소하기 위해 제작했습니다(AI랑 같이 만듬, 이상할 수 있음). 표정 명령어 간소화 Tampermonkey 유저 스크립트입니다.
 
@@ -65,15 +66,15 @@ GM이 새 api 코드를 적용한다든가 하는 별개의 활동을 하지 않
 이렇게 코코포리아에서 채팅 보내듯 보낼 수 있게 해주는 스크립트입니다.
 
 PL들이 다 각자 따로 깔아야 합니다(GM이 visual_dialogue.js를 쓰고 있기만 하다면 PL이 혼자 알아서 적용해 써도 된다는 뜻이기도 합니다).`,
-      usage: {
-        description: `@표정, 또는 대사 @표정을 전송하면 자동으로 표정이 바뀝니다.`,
-        images: [
-           "/images/expression.gif" 
-        ]
-      }
+            usage: {
+                description: `@표정, 또는 대사 @표정을 전송하면 자동으로 표정이 바뀝니다.`,
+                images: [
+                    "/images/expression.gif"
+                ]
+            }
 
-    },
-    code: `// ==UserScript==
+        },
+        code: `// ==UserScript==
 // @name         Roll20 Auto-Exclaim for Emotion
 // @namespace    http://tampermonkey.net/
 // @version      1.0
@@ -115,33 +116,33 @@ PL들이 다 각자 따로 깔아야 합니다(GM이 visual_dialogue.js를 쓰�
     }
 }, true);
 })();`
-  },
-  'auto-as-switcher': {
-    id: 'auto-as-switcher',
-    title: '토큰 클릭 시 as 전환 스크립트',
-    subtitle: '무료 계정 가능, 저널과 연동된 토큰을 클릭하면 as가 바뀝니다.',
-    description: 'Tampermonkey를 활용한 토큰 클릭 시 자동 as 전환 스크립트(GM용)',
-    author: 'O',
-    version: '1.0',
-    updatedAt: '2026. 01. 13.',
-    content: {
-      introduction: `정식 명칭은 Roll20 Auto As Switcher입니다.
+    },
+    'auto-as-switcher': {
+        id: 'auto-as-switcher',
+        title: '토큰 클릭 시 as 전환 스크립트',
+        subtitle: '무료 계정 가능, 저널과 연동된 토큰을 클릭하면 as가 바뀝니다.',
+        description: 'Tampermonkey를 활용한 토큰 클릭 시 자동 as 전환 스크립트(GM용)',
+        author: 'O',
+        version: '1.0',
+        updatedAt: '2026. 01. 13.',
+        content: {
+            introduction: `정식 명칭은 Roll20 Auto As Switcher입니다.
 
 양천일염 님의 as_switcher.js에서 영감을 받았습니다. 저널과 연동된 토큰을 선택하면 해당 저널로 as가 바뀌고, 선택을 해제하면 이전의 as로 다시 돌아갑니다. NPC가 많은 시나리오를 마스터링할 때 사용하기 좋습니다.
 
 확장 프로그램 Tampermonkey를 이용하기 때문에 별도의 api 설정이나 Pro 계정은 필요하지 않습니다. 무료 계정도 쓸 수 있습니다.
 
 다만 코드가 조금 무식하기 때문에 컴퓨터에 부하가 걸릴 수도 있습니다. 부하가 덜 걸리게 고치실 수 있는 분은 편하게 고쳐서 쓰시면 됩니다. 수정 후 재배포도 괜찮습니다.`,
-      usage: {
-        description: `페이지 영역 밖에 캐릭터 저널 인장 부분을 드래그&드롭합니다(영역 밖의 토큰은 PL에게 보이지 않기 때문입니다).
+            usage: {
+                description: `페이지 영역 밖에 캐릭터 저널 인장 부분을 드래그&드롭합니다(영역 밖의 토큰은 PL에게 보이지 않기 때문입니다).
 
 이렇게 생성한 토큰은 이미 캐릭터와 연동되어 있기 때문에, 클릭 시 해당 캐릭터로 as를 바꿀 수 있습니다.`,
-        images: [
-          "/images/asswitcher.gif"
-        ]
-      }
-    },
-    code: `// ==UserScript==
+                images: [
+                    "/images/asswitcher.gif"
+                ]
+            }
+        },
+        code: `// ==UserScript==
 // @name         Roll20 Auto As Switcher
 // @namespace    http://tampermonkey.net/
 // @version      1.0
@@ -233,17 +234,17 @@ PL들이 다 각자 따로 깔아야 합니다(GM이 visual_dialogue.js를 쓰�
     document.addEventListener('mousedown', function() { setTimeout(update, 150); }, true);
     setInterval(update, 800);
 })();`
-  },
-  'coc-chat-palette': {
-    id: 'coc-chat-palette',
-    title: 'CoC 7판 전용 채팅 팔레트 스크립트 베타 버전',
-    subtitle: '코코포리아의 채팅 팔레트 판정 기능, 판정 이외의 기능은 없습니다.',
-    description: 'Tampermonkey를 이용한 롤20 CoC 7판 적용 채팅 팔레트(GM/PL 공용)',
-    author: 'O',
-    version: '1.1',
-    updatedAt: '2026. 01. 13.',
-    content: {
-      introduction: `정식 명칭은 Roll20 CoC 7th Chat Palette 입니다.
+    },
+    'coc-chat-palette': {
+        id: 'coc-chat-palette',
+        title: 'CoC 7판 전용 채팅 팔레트 스크립트 베타 버전',
+        subtitle: '코코포리아의 채팅 팔레트 판정 기능, 판정 이외의 기능은 없습니다.',
+        description: 'Tampermonkey를 이용한 롤20 CoC 7판 적용 채팅 팔레트(GM/PL 공용)',
+        author: 'O',
+        version: '1.1',
+        updatedAt: '2026. 01. 13.',
+        content: {
+            introduction: `정식 명칭은 Roll20 CoC 7th Chat Palette 입니다.
 
 코코포리아의 채팅 팔레트 판정 기능에서 영감을 받았습니다. 채팅 팔레트에 다른 문구를 추가하는 기능은 구현하지 못했고(매크로가 있기에 필요 없다고 판단했습니다), 기능치 이름, 특성치 이름, 무기 이름을 입력하면 다이스 롤을 자동으로 굴려주는 기능에만 집중했습니다. API가 아니기 때문에 무료 계정도 가능합니다.
 
@@ -256,8 +257,8 @@ CoC 7판이어도 커스텀 시트를 사용하는 롤방에서의 작동을 보
 사용하지 않는 것을 추천합니다. Esc로 꺼 두시든가 또는 탬퍼몽키 팝업창에서 토글을 끄는 것을 추천드립니다. 이 부분은 제가 직접 업데이트해야 합니다. 정식 버전을 기대해 주세요.
 
 이상할 수 있습니다. 별 거 아니고 AI 전기고문해서 만들었습니다. 전 일자무식입니다. 코드 더 낫게 고칠 수 있으면 그렇게 고쳐서 쓰시고 재배포도 상관 없습니다. 버그 리포트는 괘념치 말고 바로바로 해 주세요.`,
-      usage: {
-        description: `시트를 한 번 열어 보았을 때 CoC 7판이 아니라면 자동으로 휴면 상태에 들어갑니다.
+            usage: {
+                description: `시트를 한 번 열어 보았을 때 CoC 7판이 아니라면 자동으로 휴면 상태에 들어갑니다.
 
 CoC 7판이라면 작동합니다. 사용할 때 문장의 서두에서만 자동완성이 뜹니다.
 
@@ -266,12 +267,12 @@ CoC 7판이라면 작동합니다. 사용할 때 문장의 서두에서만 자�
 거슬릴 때면 Esc를 눌러서 끌 수 있습니다. 이 상태에서 Esc를 누르면 다시 돌아옵니다.
 
 기능치/특성치 이름 뒤에 띄어쓰기 없이 바로 1을 붙이면 보너스/페널티 다이스를 굴릴 수 있습니다. 자료조사1, 근력1, 민첩1, 이렇게 입력해서 엔터를 눌러 보세요.`,
-        images: [
-           "/images/chatpalette.gif" 
-        ]
-      }
-    },
-    code: `// ==UserScript==
+                images: [
+                    "/images/chatpalette.gif"
+                ]
+            }
+        },
+        code: `// ==UserScript==
 // @name         Roll20 CoC 7th Chat Palette
 // @namespace    http://tampermonkey.net/
 // @version      1.1
@@ -701,31 +702,31 @@ CoC 7판이라면 작동합니다. 사용할 때 문장의 서두에서만 자�
     });
 
 })();`
-  },
-  'hide-deleted-messages': {
-    id: 'hide-deleted-messages',
-    title: 'hidden 채팅 삭제 스크립트',
-    subtitle: 'This message has been hidden 메시지가 롤방에서 보이지 않게 합니다.',
-    description: 'Tampermonkey를 이용한 롤20 hidden 채팅이 보이지 않게 하는 스크립트(GM/PL공용)',
-    author: 'R',
-    version: '1.0',
-    updatedAt: '2026. 01. 13.',
-    content: {
-      introduction: `롤20 실시간 세션 방과 외부 채팅 로그 페이지에서 This message has been hidden이라는 삭제 알림 문구가 보이지 않게 해주는 기능을 제공하는 스크립트입니다. 
+    },
+    'hide-deleted-messages': {
+        id: 'hide-deleted-messages',
+        title: 'hidden 채팅 삭제 스크립트',
+        subtitle: 'This message has been hidden 메시지가 롤방에서 보이지 않게 합니다.',
+        description: 'Tampermonkey를 이용한 롤20 hidden 채팅이 보이지 않게 하는 스크립트(GM/PL공용)',
+        author: 'R',
+        version: '1.0',
+        updatedAt: '2026. 01. 13.',
+        content: {
+            introduction: `롤20 실시간 세션 방과 외부 채팅 로그 페이지에서 This message has been hidden이라는 삭제 알림 문구가 보이지 않게 해주는 기능을 제공하는 스크립트입니다. 
 
 다만 템퍼몽키 특성상 설치한 본인의 브라우저에서만 적용되므로, 모든 세션 멤버가 삭제 흔적 없는 깔끔한 채팅창을 보려면 플레이어 전원이 각자 스크립트를 설치해야 합니다. 또한, 스크립트를 통해 보이지 않게 처리된 삭제 메시지는 시스템상 다시 복구할 수 없습니다.
 
 실수로 핸드아웃을 긁은 뒤  This message has been hidden 폭탄으로 대참사가 난 적이 있어 더 이상 부끄럽지 않으려 만든 스크립트인데 벌거숭이 임금님이 되어 버렸네요.
 
 고쳐서 쓰셔도 되고 재배포도 괜찮습니다. 편히 사용해주시면 기쁠 것 같아요. ~^_^~`,
-      usage: {
-        description: 'Hidden을 누르면 자신의 화면에서 채팅 내역이 사라집니다.',
-        images: [
-           "/images/deleter.gif"
-        ]
-      }
-    },
-    code: `// ==UserScript==
+            usage: {
+                description: 'Hidden을 누르면 자신의 화면에서 채팅 내역이 사라집니다.',
+                images: [
+                    "/images/deleter.gif"
+                ]
+            }
+        },
+        code: `// ==UserScript==
 // @name         Roll20 Hide Deleted Only
 // @namespace    http://tampermonkey.net/
 // @version      1.4
@@ -765,23 +766,23 @@ CoC 7판이라면 작동합니다. 사용할 때 문장의 서두에서만 자�
     observer.observe(chat, { childList: true, subtree: true });
     filter();
 })();`
-  },
-  'message-edit-script': {
-    id: 'message-edit-script',
-    title: '대사 수정 API+스크립트',
-    subtitle: 'Roll20 프로 계정이 만든 방만 가능하며, 탁 전원 스크립트를 적용해야 합니다.',
-    description: 'ROLL20/롤20 대사 수정 API+스크립트 배포합니다 ^_^',
-    author: 'R',
-    version: '1.0',
-    updatedAt: '2026. 01. 13.',
-    content: {
-      introduction: `+방 제작자가 아니라면 무료 플랜 사용자여도 괜찮습니다.
+    },
+    'message-edit-script': {
+        id: 'message-edit-script',
+        title: '대사 수정 API+스크립트',
+        subtitle: 'Roll20 프로 계정이 만든 방만 가능하며, 탁 전원 스크립트를 적용해야 합니다.',
+        description: 'ROLL20/롤20 대사 수정 API+스크립트 배포합니다 ^_^',
+        author: 'R',
+        version: '1.0',
+        updatedAt: '2026. 01. 13.',
+        content: {
+            introduction: `+방 제작자가 아니라면 무료 플랜 사용자여도 괜찮습니다.
 
 주요 기능
 !X (수정할 내용) 명령어를 통해 직전에 전송한 메시지의 내용을 즉시 변경합니다.
 세션 중 실시간 채팅창뿐만 아니라, 채팅 로그 페이지에서도 수정된 상태를 유지합니다.`,
-      usage: {
-        description: `입력 예시:
+            usage: {
+                description: `입력 예시:
 : 오타가 섞인 대사르 전송합니다.
 
 !X 오타가 섞인 대사를 전송합니다.
@@ -789,14 +790,14 @@ CoC 7판이라면 작동합니다. 사용할 때 문장의 서두에서만 자�
 이용 시 주의사항
 1. 로컬 렌더링 방식의 스크립트는 서버의 원본 데이터를 물리적으로 수정하는 것이 아니라, 사용자의 브라우저에 표시되는 화면을 실시간으로 가공하는 방식입니다. 따라서 본 스크립트를 설치하지 않은 플레이어의 화면에는 수정 전의 원본 메시지와 명령어 태그가 그대로 노출됩니다. 가급적 모든 참여자가 함께 설치하는 것을 권장합니다.
 2. 혼선을 방지하기 위해, 각 저널이 보낸 가장 마지막 메시지 1개에 대해서만 수정을 허용합니다.`,
-        images: ["/images/editor.gif"]
-      }
-    },
-    code: '', // Not used directly, using additionalCodeBlocks below
-    additionalCodeBlocks: [
-      {
-        title: '1. Roll20 API Script (GM용)',
-        code: `on("chat:message", function(msg) {
+                images: ["/images/editor.gif"]
+            }
+        },
+        code: '', // Not used directly, using additionalCodeBlocks below
+        additionalCodeBlocks: [
+            {
+                title: '1. Roll20 API Script (GM용)',
+                code: `on("chat:message", function(msg) {
     if (msg.type === "api" && msg.content.indexOf("!X ") === 0) {
         let newContent = msg.content.substring(3).trim(); // !X + space
         let playerId = msg.playerid;
@@ -807,10 +808,10 @@ CoC 7판이라면 작동합니다. 사용할 때 문장의 서두에서만 자�
         sendChat(playerName, \`[X_MODIFY]\${newContent}\`);
     }
 });`
-      },
-      {
-        title: '2. Tampermonkey UserScript (GM+PL용)',
-        code: `// ==UserScript==
+            },
+            {
+                title: '2. Tampermonkey UserScript (GM+PL용)',
+                code: `// ==UserScript==
 // @name         RUSRoll20 EDIT
 // @namespace    http://tampermonkey.net/
 // @version      4.0
@@ -900,7 +901,46 @@ CoC 7판이라면 작동합니다. 사용할 때 문장의 서두에서만 자�
     // 로그 페이지 및 로딩 지연 대응용 (0.4초 간격)
     setInterval(doReconstructEdit, 400);
 })();`
-      }
-    ]
-  }
+            }
+        ]
+    },
+    'outside-avatar': {
+        id: 'outside-avatar',
+        title: '외부 아바타 주입기',
+        subtitle: '롤20 용량과 관계 없이 이미지 링크로 아바타 이미지 변경이 가능합니다.',
+        description: '주요 기능Roll20의 아트 라이브러리 용량을 소모하지 않고, 외부 이미지 URL을 통해 캐릭터 아바타를 즉시 변경합니다.',
+        author: 'R',
+        version: '1.0',
+        updatedAt: '2026. 01. 13.',
+        content: {
+            introduction: `사용자의 브라우저에서만 바뀌는 것이 아니라, Roll20 서버의 캐릭터 속성을 직접 수정하므로 설치하지 않은 다른 플레이어들에게도 변경된 아바타가 정상적으로 노출됩니다.
+            
+설치 및 설정 방법
+
+1. 확장 프로그램 설치
+제공된 확장 프로그램 폴더(ZIP)를 다운로드하고 압축을 해제합니다.
+크롬 브라우저에서 chrome://extensions/ 주소로 이동합니다.
+우측 상단의 [개발자 모드]를 활성화합니다.
+좌측 상단의 [압축해제된 확장 프로그램을 로드합니다] 버튼을 클릭하여 해제한 폴더를 선택합니다.
+
+2. 실행 확인
+Roll20 캠페인 페이지를 새로고침합니다.
+우측 사이드바의 저널 탭을 클릭하면 최상단에 [이미지 외부에서 가져오기] 버튼이 생성됩니다.
+`,
+            usage: {
+                description: `1. 사이드바 상단의 [이미지 외부에서 가져오기] 버튼을 클릭합니다.
+2. 대상 캐릭터 이름: 아바타를 변경할 캐릭터 저널의 이름을 정확히 입력합니다. (대소문자 및 띄어쓰기 포함)
+3. 이미지 주소: 디스코드 링크나 Imgur 등 외부 이미지의 주소를 입력합니다. (뒤가 PNG여야 인식이 되는 것으로 확인했습니다.) Base64 방식도 가능하나 조금 불안정합니다.
+4. 확인: 성공 메시지가 뜨면 해당 캐릭터 시트를 닫았다가 다시 열어 변경된 아바타를 확인합니다.`,
+                images: [
+                    "/images/avatar.gif"
+                ]
+            }
+        },
+        code: `유료 전환 예정의 확장 프로그램이기에 이 사이트에서 배포하지 않습니다.
+아래 링크를 참고해 주세요.
+
+https://posty.pe/47fs9m
+`
+    },
 };
