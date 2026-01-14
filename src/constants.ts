@@ -883,13 +883,13 @@ CoC 7판이라면 작동합니다. 사용할 때 문장의 서두에서만 자�
                         const editedMark = ' <span style="color:#aaa; font-size:0.8em; font-style:italic; margin-left:5px;">(수정됨)</span>';
 
                         // 부모 노드의 내용 교체
-                        prev.node.innerHTML = \`
-                            &#36{avatarHtml}
-                            &#36{byHtml}
-                            <div class="content">&#36{newText}&#36{editedMark}</div>
-                        \`;
+                        prev.node.innerHTML = `
+                            ${avatarHtml}
+                            ${byHtml}
+                            <div class="content">${newText}${editedMark}</div>
+                        `;
 
-                        console.log(\`[Reconstruct] &#36{targetSpeaker}의 메시지를 재조립하여 수정함.\`);
+                        console.log(`[Reconstruct] ${targetSpeaker}의 메시지를 재조립하여 수정함.`);
                         break;
                     }
                 }
@@ -910,7 +910,8 @@ CoC 7판이라면 작동합니다. 사용할 때 문장의 서두에서만 자�
 
     // 로그 페이지 및 로딩 지연 대응용 (0.4초 간격)
     setInterval(doReconstructEdit, 400);
-})();`
+})();
+`
             }
         ]
     },
