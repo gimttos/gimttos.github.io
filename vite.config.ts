@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: './', // ⭐ Pages 필수
+  base: '/', // GitHub 개인 페이지
   build: {
     outDir: 'docs',
     emptyOutDir: true,
