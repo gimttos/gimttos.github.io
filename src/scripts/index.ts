@@ -1,0 +1,7 @@
+export { visualNovelHelper } from './visualNovelHelper';
+export { autoAsSwitcher } from './autoAsSwitcher';
+export { cocChatPalette } from './cocChatPalette';
+export { hideDeletedMessages } from './hideDeletedMessages';
+export { messageEditScript } from './messageEditScript';
+export { outsideAvatar } from './outsideAvatar';
+export { characterManager } from './characterManager';
