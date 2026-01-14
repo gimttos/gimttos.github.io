@@ -20,25 +20,29 @@ console.log('✓ index.html copied');
 const assetsSrc = path.join(distPath, 'assets');
 const assetsDest = path.join(rootPath, 'assets');
 
-function copyDir(src, dest) {
-  if (!fs.existsSync(dest)) {
-    fs.mkdirSync(dest, { recursive: true });
-  }
-  
-  const files = fs.readdirSync(src);
-  files.forEach(file => {
-    const srcFile = path.join(src, file);
-    const destFile = path.join(dest, file);
-    
-    if (fs.statSync(srcFile).isDirectory()) {
-      copyDir(srcFile, destFile);
-    } else {
-      fs.copyFileSync(srcFile, destFile);
+if (fs.existsSync(assetsSrc)) {
+  function copyDir(src, dest) {
+    if (!fs.existsSync(dest)) {
+      fs.mkdirSync(dest, { recursive: true });
     }
-  });
-}
+    
+    const files = fs.readdirSync(src);
+    files.forEach(file => {
+      const srcFile = path.join(src, file);
+      const destFile = path.join(dest, file);
+      
+      if (fs.statSync(srcFile).isDirectory()) {
+        copyDir(srcFile, destFile);
+      } else {
+        fs.copyFileSync(srcFile, destFile);
+      }
+    });
+  }
 
-copyDir(assetsSrc, assetsDest);
-console.log('✓ assets/ copied');
+  copyDir(assetsSrc, assetsDest);
+  console.log('✓ assets/ copied');
+} else {
+  console.log('⚠ assets/ folder not found, skipping...');
+}
 
 console.log('✅ Build files ready for deployment!');
