@@ -3,9 +3,9 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/', // GitHub 개인 페이지
+  base: '/',
   build: {
-    outDir: 'docs',
+    outDir: 'dist',
     emptyOutDir: true,
   }
 })
