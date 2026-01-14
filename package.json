@@ -7,8 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    
-    "deploy": "rd /s /q dist && npm run build && xcopy dist\\* . /E /Y && git add . && git commit -m \"deploy\" && git push"
+    "deploy": "npm run build && git add ."
   },
   "keywords": [],
   "author": "",
