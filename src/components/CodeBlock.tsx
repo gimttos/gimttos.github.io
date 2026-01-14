@@ -9,6 +9,13 @@ interface CodeBlockProps {
 const CodeBlock: React.FC<CodeBlockProps> = ({ code, onCopy }) => {
   const [isCopiedLocal, setIsCopiedLocal] = useState(false);
 
+  // HTML 엔티티를 원본 문자로 디코딩
+  const decodeHtmlEntities = (text: string): string => {
+    const textarea = document.createElement('textarea');
+    textarea.innerHTML = text;
+    return textarea.value;
+  };
+
   const handleCopyClick = () => {
     navigator.clipboard.writeText(code).then(() => {
       setIsCopiedLocal(true);
@@ -33,7 +40,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({ code, onCopy }) => {
       {/* Code Container with Scroll */}
       <div className="max-h-[500px] overflow-y-auto custom-scrollbar bg-zinc-50 p-6 text-sm font-mono leading-relaxed">
         <pre className="whitespace-pre-wrap break-all text-zinc-800">
-          <code>{code}</code>
+          <code>{decodeHtmlEntities(code)}</code>
         </pre>
       </div>
       
