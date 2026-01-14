@@ -778,6 +778,10 @@ CoC 7판이라면 작동합니다. 사용할 때 문장의 서두에서만 자�
         content: {
             introduction: `+방 제작자가 아니라면 무료 플랜 사용자여도 괜찮습니다.
 
+++) 사실 무료 플랜의 방에서도 사용이 가능하시기야 합니다. API를 사용하지 않고도 템퍼몽키 스크립트를 저장하신다면 [X_MODIFY]를 앞에 붙여 이런 식의 수정이 가능합니다.
+
++++)기존 배포되던 잡담 API의 인식 범위가 커 해당 API와 충돌된다는 제보가 있어 코드를 수정하였습니다. 만약 문제가 발생한다면 코드 교체 바랍니다!
+
 주요 기능
 !X (수정할 내용) 명령어를 통해 직전에 전송한 메시지의 내용을 즉시 변경합니다.
 세션 중 실시간 채팅창뿐만 아니라, 채팅 로그 페이지에서도 수정된 상태를 유지합니다.`,
@@ -798,14 +802,19 @@ CoC 7판이라면 작동합니다. 사용할 때 문장의 서두에서만 자�
             {
                 title: '1. Roll20 API Script (GM용)',
                 code: `on("chat:message", function(msg) {
-    if (msg.type === "api" && msg.content.indexOf("!X ") === 0) {
-        let newContent = msg.content.substring(3).trim(); // !X + space
-        let playerId = msg.playerid;
-        let playerName = msg.who;
+    // !X 또는 !x로 시작하는지 확인 (대소문자 무시)
+    // "!X " 뒤에 한 칸의 공백이 있어야 작동합니다.
+    if (msg.type === "api" && msg.content.toLowerCase().indexOf("!x ") === 0) {
+        
+        // "!x " 이후의 글자만 가져옵니다. (길이가 3이므로 substring(3))
+        let edit_val = msg.content.substring(3).trim();
+        
+        // 내용이 없으면 중단
+        if (!edit_val) return;
 
-        // 모든 플레이어의 브라우저로 수정 신호를 보냅니다.
-        // [X_MODIFY] 태그는 템퍼몽키가 감지합니다.
-        sendChat(playerName, \`[X_MODIFY]\${newContent}\`);
+        // 템퍼몽키가 인식할 수 있도록 [X_MODIFY] 태그를 붙여서 전송
+        // msg.who를 그대로 전달해야 템퍼몽키가 이전 메시지 화자와 비교할 수 있습니다.
+        sendChat(msg.who, "[X_MODIFY] " + edit_val);
     }
 });`
             },
@@ -815,8 +824,8 @@ CoC 7판이라면 작동합니다. 사용할 때 문장의 서두에서만 자�
 // @name         RUSRoll20 EDIT
 // @namespace    http://tampermonkey.net/
 // @version      4.0
-// @description  Message Edit Script
-// @author       User
+// @description
+// @author
 // @match        https://app.roll20.net/editor/
 // @match        https://app.roll20.net/campaigns/chatarchive/*
 // @grant        none
@@ -827,7 +836,7 @@ CoC 7판이라면 작동합니다. 사용할 때 문장의 서두에서만 자�
 
     // 이름 비교용 정규화 (GM 제거 및 공백 제거)
     function normalize(str) {
-        return str ? str.replace(/\\(GM\\)/g, "").replace(/[^a-zA-Z0-9가-힣]/g, "").trim() : "";
+        return str ? str.replace(/\(GM\)/g, "").replace(/[^a-zA-Z0-9가-힣]/g, "").trim() : "";
     }
 
     function doReconstructEdit() {
@@ -874,12 +883,12 @@ CoC 7판이라면 작동합니다. 사용할 때 문장의 서두에서만 자�
 
                         // 부모 노드의 내용 교체
                         prev.node.innerHTML = \`
-                            \${avatarHtml}
-                            \${byHtml}
-                            <div class="content">\${newText}\${editedMark}</div>
+                            &#36{avatarHtml}
+                            &#36{byHtml}
+                            <div class="content">&#36{newText}&#36{editedMark}</div>
                         \`;
 
-                        console.log(\`[Reconstruct] \${targetSpeaker}의 메시지를 재조립하여 수정함.\`);
+                        console.log(\`[Reconstruct] &#36{targetSpeaker}의 메시지를 재조립하여 수정함.\`);
                         break;
                     }
                 }
