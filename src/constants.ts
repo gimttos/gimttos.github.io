@@ -883,13 +883,12 @@ CoC 7판이라면 작동합니다. 사용할 때 문장의 서두에서만 자�
                         const editedMark = ' <span style="color:#aaa; font-size:0.8em; font-style:italic; margin-left:5px;">(수정됨)</span>';
 
                         // 부모 노드의 내용 교체
-                        prev.node.innerHTML = `
-                            ${avatarHtml}
-                            ${byHtml}
-                            <div class="content">${newText}${editedMark}</div>
-                        `;
-
-                        console.log(`[Reconstruct] ${targetSpeaker}의 메시지를 재조립하여 수정함.`);
+                        prev.node.innerHTML = \`
+                            \${avatarHtml}
+                            \${byHtml}
+                            <div class="content">\${newText}\${editedMark}</div>
+                        \`;
+                        console.log(\`[Reconstruct] \${targetSpeaker}의 메시지를 재조립하여 수정함.\`);
                         break;
                     }
                 }
