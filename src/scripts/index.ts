@@ -5,3 +5,5 @@ export { hideDeletedMessages } from './hideDeletedMessages';
 export { messageEditScript } from './messageEditScript';
 export { outsideAvatar } from './outsideAvatar';
 export { characterManager } from './characterManager';
+export { visual } from './visual';
+export { roommanager } from './roommanager';
