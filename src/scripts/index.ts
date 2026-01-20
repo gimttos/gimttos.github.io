@@ -3,6 +3,5 @@ export { autoAsSwitcher } from './autoAsSwitcher';
 export { cocChatPalette } from './cocChatPalette';
 export { hideDeletedMessages } from './hideDeletedMessages';
 export { messageEditScript } from './messageEditScript';
-export { outsideAvatar } from './outsideAvatar';
 export { visual } from './visual';
 export { roommanager } from './roommanager';

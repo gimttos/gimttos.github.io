@@ -5,7 +5,6 @@ import {
     cocChatPalette,
     hideDeletedMessages,
     messageEditScript,
-    outsideAvatar,
     visual,
     roommanager,
 } from './scripts';
@@ -20,7 +19,6 @@ export const NAV_ITEMS: NavigationItem[] = [
     { id: 'coc-chat-palette', label: 'CoC 7판 채팅 팔레트', type: 'script' },
     { id: 'hide-deleted-messages', label: 'Hidden 채팅 삭제', type: 'script' },
     { id: 'message-edit-script', label: '대사 수정 API+스크립트', type: 'script' },
-    { id: 'outside-avatar', label: '외부 아바타 주입기', type: 'script' },
     { id: 'visual', label: '비주얼 노벨 오버레이', type: 'script' },
     { id: 'roommanager', label: '세팅 zip 변환', type: 'script' }
 ];
@@ -60,7 +58,6 @@ export const SCRIPTS: Record<string, ScriptItem> = {
     'coc-chat-palette': cocChatPalette,
     'hide-deleted-messages': hideDeletedMessages,
     'message-edit-script': messageEditScript,
-    'outside-avatar': outsideAvatar,
     'visual': visual,
     'roommanager': roommanager,
 };
